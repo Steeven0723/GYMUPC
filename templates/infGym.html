@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SQR -->
+    <meta charset="utf-8">
+    <title>GYM_UPC</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="12">
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
+
+                    <h1 class="text-light display-3 mb-3"><img class="img-fluid"
+                            src="{{ url_for('static', filename='img/LogoSinv.png') }}"></h1>
+                    <h2 class="text-light typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">Asistente GYM UPC</div>
+                    <div class="d-flex align-items-center pt-5">
+                        <a href="/" class="btn btn-primary py-3 px-4 me-5">Regresar</a>
+
+                    </div>
+                </div>
+
+                <div class="col" style="background-color: rgba(255, 255, 255, 0.5);">
+                    <h3>Pregunta por:</h3>
+                    <h3>1. Informacion.</h3>
+                    <h3>2. Registrarse.</h3>
+                    <h3>3. Secciones.</h3>
+                    <h3>4. Que maquinas hay.</h3>
+                    <h3>5. Cuantas Maquinas hay.</h3>
+                    <h3>6. Preguntar Sobre la maquina que quieres saber con su nombre.</h3>
+                    <h3>7. Calcular ICM (Indice de masa Corporal) Altura:(metros) Peso:(Kg) </h3>
+                    <h3>8. Te recomienda segun tu IMC(Pretuntando dieta Insuficiente, Salulable, Sobrepeso) que alimentos deben consumir</h3>
+                    <h3>9. Terminar Asistente.</h3>
+
+                </div>
+
+                <div class="" style="background-color: rgba(255, 255, 255, 0.5);">
+                    <h3>Algoritmo:</h3>
+                    <h6>Un algoritmo es una secuencia de pasos lógicos y bien definidos que se utilizan para resolver un
+                        problema o llevar a cabo una tarea. En el contexto de la nutrición y el ejercicio, un algoritmo
+                        podría ser un conjunto de pasos que determinan la dieta y el plan de entrenamiento más adecuados
+                        para un individuo en función de sus características específicas.</h6>
+                    <h3>Modelos utilizados:.</h3>
+                    <h6>Se emplean diferentes modelos matemáticos y estadísticos para calcular las necesidades
+                        calóricas, el equilibrio energético, el índice de masa corporal (IMC), la composición corporal y
+                        otros parámetros relevantes para evaluar la condición física y las metas de una persona. Algunos
+                        modelos comunes incluyen:</h6>
+                    <h3>A. Índice de Masa Corporal (IMC): </h3>
+                    <h6>Es una fórmula que utiliza el peso y la altura de una persona para estimar su nivel de grasa
+                        corporal y determinar si está en un rango saludable.</h6>
+                    <h3>B. Fórmulas de requerimientos energéticos:</h3>
+                    <h6>Hay diversas fórmulas (como la fórmula de Harris-Benedict, entre otras) que calculan las
+                        necesidades calóricas diarias basadas en factores como el peso, altura, sexo, edad.</h6>
+
+                    <h3>C. Modelos de entrenamiento: </h3>
+                    <h6>Estos modelos pueden variar desde simples recomendaciones de actividad física hasta algoritmos
+                        complejos que consideran la resistencia, fuerza, frecuencia cardíaca, etc., adaptándose a las
+                        características individuales.</h6>
+                    <h3>D. Modelos de nutrición: </h3>
+                    <h6>Algunos modelos y algoritmos ayudan a diseñar planes de alimentación equilibrados según las
+                        necesidades calóricas, los macronutrientes (proteínas, carbohidratos, grasas) y micronutrientes
+                        necesarios para una persona en particular.</h6>
+                    <h3>Equipamiento de ejercicio:</h3>
+                    <h6>Proporcionar información sobre las máquinas de ejercicio disponibles en la UPC, 
+                        qué músculos trabajan y cómo se pueden incorporar en un programa
+                        de entrenamiento.</h6>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/typed/typed.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

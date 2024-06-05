@@ -1,0 +1,12 @@
+body {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.centrar-pantalla {
+    text-align: center;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SQR -->
+    <meta charset="utf-8">
+    <title>GYM_UPC</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="12">
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
+
+
+                    <h1 class="text-light display-3 mb-3"><img class="img-fluid"
+                            src="{{ url_for('static', filename='img/LOGO-UPC.png') }}"></h1>
+                    <h3 class="text-light mb-3">Bienvenido</h3>
+                    <h2 class="text-light typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">Asistente GYM UPC</div>
+                    <div class="d-flex align-items-center pt-5">
+                        <a href="infGym.html" class="btn btn-primary py-3 px-4 me-5">Ayuda</a>
+                        <button type="button" id="ejecutarBtn" class="btn-play" data-bs-toggle="modal"
+                            data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="text-light ms-4 mb-0 d-none d-sm-block">Asistente</h5>
+                    </div>
+                    <a href="calICM.html" class="btn btn-primary py-1 px-3 me-5">Calcular IMC</a>
+                </div>
+                <div class="col-lg-6">
+                    {% if img_name %}
+                    <img class="img-fluid" src="{{ url_for('static', filename='img/' + img_name) }}" alt="Imagen"
+                        id="imagen">
+                    {% else %}
+                    <p>La imagen no está disponible.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+    <!-- Header End -->
+
+
+    <script>
+        let ejecutando = false; // Variable para controlar si el asistente está en ejecución
+
+        document.getElementById("ejecutarBtn").addEventListener("click", function () {
+            if (!ejecutando) {
+                ejecutando = true; // Marcar que el asistente está en ejecución
+
+                fetch("/ejecutar-python")
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log("Asistente ejecutado");
+                        } else {
+                            console.error("Error al ejecutar el asistente");
+                        }
+
+                        ejecutando = false; // Marcar que la ejecución ha finalizado
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        ejecutando = false; // Marcar que la ejecución ha finalizado por error
+                    });
+            } else {
+                console.log("El asistente ya está en ejecución");
+            }
+        });
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/typed/typed.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
